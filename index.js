@@ -26,8 +26,7 @@ clipboard.startWatching = () => {
     if(!watcherId)
         watcherId = setInterval(() => {
             if(isDiffText(previousText, previousText = clipboard.readText())) clipboardEmitter.emit('text-changed')
-            if(isDiffImage(previousImage, previousImage = clipboard.readImage())) clipboardEmitter.emit('image-changed')
-        }, 500)
+        }, 100)
     return clipboard
 }
 
